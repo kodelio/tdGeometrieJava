@@ -6,6 +6,10 @@ import Geometrie.Point;
  * Created by laurent on 20/01/2017.
  */
 public class Losange extends Parallelogramme {
+    @Override
+    protected String type() {
+        return super.type() + " et un losange.";
+    }
 
     public Losange(Point p1, Point p2, Point p3, Point p4) {
 

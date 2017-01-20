@@ -11,19 +11,21 @@ import java.util.ArrayList;
  */
 public class Quadrilatere extends ObjetGeometrique{
 
-    protected String type = "quadrilatère quelconque";
+    protected String type() {
+        return "quadrilatère quelconque";
+    }
 
     protected Point points[] = new Point[4];
 
     protected String propriete(){
-
+        return "";
     }
 
     private String affiche(){
         return this.toString();
     }
 
-    protected String afficheSommets(){
+    protected String coordonnees(){
         String returnString = new String();
         for (Point point : points){
             returnString += " (" + point.getAbscisse() + "," + point.getOrdonnee() + ")";
@@ -33,16 +35,14 @@ public class Quadrilatere extends ObjetGeometrique{
 
     @Override
     public String toString() {
-        return "Je suis un " + type + ". Mes sommets sont " + afficheSommets();
+        return "Je suis un " + type() + ". Mes sommets sont " + coordonnees();
 
     }
 
-    public Quadrilatere() {
-        this.addPropriete(new Propriete(""));
-    }
-
-    public Quadrilatere(Point pointA, Point pointB, Point pointC, Point pointD) {
-        this();
-        this.points = points;
+    public Quadrilatere(Point p1, Point p2, Point p3, Point p4) {
+        points[0] = p1;
+        points[1] = p2;
+        points[2] = p3;
+        points[3] = p4;
     }
 }
