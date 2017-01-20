@@ -21,9 +21,9 @@ public class Point {
      * Constructeur normal
      **/
 
-    public Point (double uneAbs, double uneOrd) {
-        abscisse = uneAbs;
-        ordonnee = uneOrd;
+    public Point (double abs, double ord) {
+        abscisse = abs;
+        ordonnee = ord;
     }
 
     /**
