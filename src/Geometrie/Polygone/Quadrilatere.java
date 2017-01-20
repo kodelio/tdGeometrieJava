@@ -18,7 +18,11 @@ public class Quadrilatere extends ObjetGeometrique{
     protected Point points[] = new Point[4];
 
     protected String propriete(){
-        return "";
+        String returnString = new String();
+        for (Propriete propriete : getPropriete()){
+            returnString += " " + propriete + ",";
+        }
+        return returnString;
     }
 
     private String affiche(){
