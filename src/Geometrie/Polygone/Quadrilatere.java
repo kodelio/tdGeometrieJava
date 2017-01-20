@@ -15,9 +15,17 @@ public class Quadrilatere {
         return this.toString();
     }
 
+    protected String afficheSommets(){
+        String returnString = new String();
+        for (Point point : points){
+            returnString += " (" + point.getAbscisse() + "," + point.getOrdonnee() + ")";
+        }
+        return returnString;
+    }
+
     @Override
     public String toString() {
-        return "Je suis un " + type + ". Mes sommets";
+        return "Je suis un " + type + ". Mes sommets sont " + afficheSommets();
 
     }
 
