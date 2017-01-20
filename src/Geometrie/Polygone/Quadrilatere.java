@@ -1,15 +1,23 @@
 package Geometrie.Polygone;
 
+import Geometrie.ObjetGeometrique;
 import Geometrie.Point;
+import Geometrie.Propriete;
+
+import java.util.ArrayList;
 
 /**
  * Created by rhaltz on 20/01/2017.
  */
-public class Quadrilatere {
+public class Quadrilatere extends ObjetGeometrique{
 
     protected String type = "quadrilatère quelconque";
 
     protected Point points[] = new Point[4];
+
+    protected String propriete(){
+
+    }
 
     private String affiche(){
         return this.toString();
@@ -30,10 +38,11 @@ public class Quadrilatere {
     }
 
     public Quadrilatere() {
-
+        this.addPropriete(new Propriete(""));
     }
 
-    public Quadrilatere(Point[] points) {
+    public Quadrilatere(Point pointA, Point pointB, Point pointC, Point pointD) {
+        this();
         this.points = points;
     }
 }
