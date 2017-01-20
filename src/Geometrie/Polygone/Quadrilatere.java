@@ -17,14 +17,6 @@ public class Quadrilatere extends ObjetGeometrique{
 
     protected Point points[] = new Point[4];
 
-    protected String propriete(){
-        String returnString = new String();
-        for (Propriete propriete : getPropriete()){
-            returnString += " " + propriete + ",";
-        }
-        return returnString;
-    }
-
     private String affiche(){
         return this.toString();
     }
@@ -39,7 +31,7 @@ public class Quadrilatere extends ObjetGeometrique{
 
     @Override
     public String toString() {
-        return "Je suis un " + type() + ". Mes sommets sont " + coordonnees();
+        return "Je suis un " + type() + "." + propriete() + ". Mes sommets sont " + coordonnees();
 
     }
 
@@ -48,5 +40,7 @@ public class Quadrilatere extends ObjetGeometrique{
         points[1] = p2;
         points[2] = p3;
         points[3] = p4;
+
+        addPropriete(new Propriete("Prop 1"));
     }
 }

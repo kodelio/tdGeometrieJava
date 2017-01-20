@@ -15,4 +15,13 @@ public abstract class ObjetGeometrique {
     public ArrayList<Propriete> getPropriete() {
         return propriete;
     }
+
+    protected String propriete(){
+        String returnString = new String();
+        for (Propriete propriete : getPropriete()){
+            returnString += " " + propriete + ",";
+        }
+        //TODO check for last item : no coma
+        return returnString;
+    }
 }
