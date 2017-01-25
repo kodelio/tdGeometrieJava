@@ -1,23 +1,24 @@
 package Geometrie.Polygone;
 
-import Geometrie.Point;
-import Geometrie.Propriete;
+import Geometrie.InterPoint;
 
-/**
- * Created by laurent on 20/01/2017.
- */
-public class Parallelogramme extends Trapeze {
-    @Override
-    protected String type() {
-        return super.type() + " et un parallélogramme";
+public class Parallelogramme extends Quadrilatere {
+
+
+    public Parallelogramme(InterPoint a, InterPoint b, InterPoint c, InterPoint d) {
+        super(a, b, c, d);
     }
 
+    public String propriete() {
+        return "Un parallelogramme est quadrilatère particulier. Ses cotés sont paralleles deux à deux.";
+    }
 
+    public String type() {
+        return "Je suis un parallelogramme.";
+    }
 
-    public Parallelogramme(Point p1, Point p2, Point p3, Point p4) {
-
-        super(p1, p2, p3, p4);
-        addPropriete(new Propriete("Prop Parallelogramme 1"));
-        addPropriete(new Propriete("Prop Parallelogramme 2"));
+    @Override
+    public String toString() {
+        return type() + " " + propriete() + " " + coordonees();
     }
 }

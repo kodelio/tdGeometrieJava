@@ -1,20 +1,25 @@
 package Geometrie.Polygone;
 
-import Geometrie.Point;
-import Geometrie.Propriete;
+import Geometrie.InterPoint;
 
-/**
- * Created by laurent on 20/01/2017.
- */
 public class Trapeze extends Quadrilatere {
-    @Override
-    protected String type() {
-        return super.type() + " et un trapèze";
+
+    public Trapeze(InterPoint a, InterPoint b, InterPoint c, InterPoint d) {
+        super(a, b, c, d);
     }
 
-    public Trapeze(Point p1, Point p2, Point p3, Point p4) {
-        super(p1, p2, p3, p4);
-        addPropriete(new Propriete("Prop Trapeze 1"));
-        addPropriete(new Propriete("Prop Trapeze 2"));
+    public String propriete() {
+        return "Un trapèze est un quadrilatère, possédant deux côtés opposés parallèles. Ces deux côtés parallèles sont appelés bases.";
     }
+
+    public String type() {
+        return "Je suis un trapèze.";
+    }
+
+
+    @Override
+    public String toString() {
+        return type() + " " + propriete() + " " + coordonees();
+    }
+
 }

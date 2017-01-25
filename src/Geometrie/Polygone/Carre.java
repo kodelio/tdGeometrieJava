@@ -1,21 +1,29 @@
 package Geometrie.Polygone;
 
-import Geometrie.Point;
-import Geometrie.Propriete;
+import Geometrie.InterPoint;
 
-/**
- * Created by laurent on 20/01/2017.
- */
-public class Carre extends Rectangle {
-    @Override
-    protected String type() {
-        return super.type() + " et un carré";
+public class Carre extends Quadrilatere {
+
+    public Carre(InterPoint a, InterPoint b, InterPoint c, InterPoint d) {
+        super(a, b, c, d);
     }
 
-    public Carre(Point p1, Point p2, Point p3, Point p4) {
+    public String propriete() {
+        return "Un carré est quadrilatère particulier à la fois rectangle et losange. Ses cotés sont parallèles deux à deux, de longueur égales et orthogonaux. Ses diagoinales sont orthogonales.";
+    }
 
-        super(p1, p2, p3, p4);
-        addPropriete(new Propriete("Prop Carre 1"));
-        addPropriete(new Propriete("Prop Carre 2"));
+    public String type() {
+        return "Je suis un carré de " + cote(getA(), getB()) + "cm de coté.";
+    }
+
+
+    private double aire() {
+        double distAB = cote(getA(), getB());
+        return Math.pow(distAB, 2);
+    }
+
+    @Override
+    public String toString() {
+        return type() + " " + propriete() + " " + coordonees() + " Son aire est " + aire();
     }
 }

@@ -1,22 +1,28 @@
 package Geometrie.Polygone;
 
-import Geometrie.Point;
-import Geometrie.Propriete;
+import Geometrie.InterPoint;
 
-/**
- * Created by laurent on 20/01/2017.
- */
-public class Rectangle extends Parallelogramme {
-    @Override
-    protected String type() {
-        return super.type() + " et un rectangle";
+public class Rectangle extends Quadrilatere {
+    public Rectangle(InterPoint a, InterPoint b, InterPoint c, InterPoint d) {
+        super(a, b, c, d);
     }
 
+    public String propriete() {
+        return "un rectangle est un quadrilatère dont les quatre angles sont droits.";
+    }
 
+    public String type() {
+        return "Je suis un Rectangle.";
+    }
 
-    public Rectangle(Point p1, Point p2, Point p3, Point p4) {
-        super(p1, p2, p3, p4);
-        addPropriete(new Propriete("Prop Rectangle 1"));
-        addPropriete(new Propriete("Prop Rectangle 2"));
+    public double aire() {
+        double j = cote(getA(), getB());
+        double h = cote(getB(), getC());
+        return j * h;
+    }
+
+    @Override
+    public String toString() {
+        return type() + " " + propriete() + " " + coordonees() + " Son aire est " + aire();
     }
 }

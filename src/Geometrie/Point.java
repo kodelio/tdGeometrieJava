@@ -1,46 +1,36 @@
 package Geometrie;
 
-/**
- * Created by laurent on 20/01/17.
- */
+public class Point implements InterPoint {
+    private double x, y;
 
-public class Point {
-    private double abscisse;
-    private double ordonnee;
-
-    /**
-     * Constructeur par défaut
-     */
-
-    public Point () {
-        abscisse = 0.;
-        ordonnee = 0.;
+    public double getX() {
+        return x;
     }
 
-    /**
-     * Constructeur normal
-     **/
-
-    public Point (double abs, double ord) {
-        abscisse = abs;
-        ordonnee = ord;
+    public void setX(double x) {
+        this.x = x;
     }
 
-    /**
-     * Accesseurs de consultation
-     * @return Retourne la coordonnee correspondante
-     **/
+    public double getY() {
+        return y;
+    }
 
-    public double getAbscisse() {return abscisse;}
-    public double getOrdonnee() {return ordonnee;}
+    public void setY(double y) {
+        this.y = y;
+    }
 
-    /**
-     * Methode standard toString
-     * @return Retourne une forme externe de l'objet support
-     **/
+    public Point() {
+        this.setX(0);
+        this.setY(0);
+    }
+
+    public Point(double X, double Y) {
+        this.setX(X);
+        this.setY(Y);
+    }
 
     @Override
     public String toString() {
-        return "(" + abscisse + ", " + ordonnee + ")";
+        return "(" + this.getX() + "," + this.getY() + ")";
     }
 }

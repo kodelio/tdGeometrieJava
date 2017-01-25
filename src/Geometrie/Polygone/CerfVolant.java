@@ -1,20 +1,22 @@
 package Geometrie.Polygone;
 
-import Geometrie.Point;
-import Geometrie.Propriete;
+import Geometrie.InterPoint;
 
-/**
- * Created by laurent on 20/01/2017.
- */
 public class CerfVolant extends Quadrilatere {
-    @Override
-    protected String type() {
-        return super.type() + " et un cerfVolant";
+    public CerfVolant(InterPoint a, InterPoint b, InterPoint c, InterPoint d) {
+        super(a, b, c, d);
     }
 
-    public CerfVolant(Point p1, Point p2, Point p3, Point p4) {
-        super(p1, p2, p3, p4);
-        addPropriete(new Propriete("Prop CerfVolant 1"));
-        addPropriete(new Propriete("Prop CerfVolant 2"));
+    public String propriete() {
+        return "un cerf-volant est un quadrilatère dont une des diagonales est un axe de symétrie. Les diagonales peuvent se couper à l'intérieur ou à l'extérieur. Ceci contraste avec un parallélogramme, où les côtés égaux sont opposés.";
+    }
+
+    public String type() {
+        return "Je suis un cerf-volant.";
+    }
+
+    @Override
+    public String toString() {
+        return type() + " " + propriete() + " " + coordonees();
     }
 }
