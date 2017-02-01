@@ -1,3 +1,5 @@
+//Laurent Toson & Raphael Haltz
+
 package Geometrie;
 
 public class Point implements InterPoint {

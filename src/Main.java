@@ -1,3 +1,5 @@
+//Laurent Toson & Raphael Haltz
+
 import java.util.ArrayList;
 import Geometrie.*;
 import Geometrie.Polygone.*;

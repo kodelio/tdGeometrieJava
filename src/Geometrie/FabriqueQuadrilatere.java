@@ -1,3 +1,5 @@
+//Laurent Toson & Raphael Haltz
+
 package Geometrie;
 
 import java.lang.reflect.InvocationTargetException;

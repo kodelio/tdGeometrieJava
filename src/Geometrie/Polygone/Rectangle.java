@@ -1,3 +1,5 @@
+//Laurent Toson & Raphael Haltz
+
 package Geometrie.Polygone;
 
 import Geometrie.InterPoint;
