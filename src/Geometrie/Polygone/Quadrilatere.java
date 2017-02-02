@@ -1,19 +1,39 @@
-//Laurent Toson & Raphael Haltz
+/**
+ * Laurent Toson & Raphael Haltz
+ */
 
 package Geometrie.Polygone;
 
 import Geometrie.*;
 
+/**
+ * Classe Quadrilatère
+ */
 public class Quadrilatere {
     private InterPoint a, b, c, d;
+    private String couleurTrait, couleurInterieur;
 
-    public Quadrilatere(InterPoint a, InterPoint b, InterPoint c, InterPoint d) {
+    /**
+     * Constructeur
+     * @param a
+     * @param b
+     * @param c
+     * @param d
+     * @param couleurTrait
+     * @param couleurInterieur
+     */
+    public Quadrilatere(InterPoint a, InterPoint b, InterPoint c, InterPoint d, String couleurTrait, String couleurInterieur) {
         this.a = a;
         this.b = b;
         this.c = c;
         this.d = d;
+        this.couleurTrait = couleurTrait;
+        this.couleurInterieur = couleurInterieur;
     }
 
+    /**
+     * Constructeur par défaut
+     */
     public Quadrilatere() {
         new FabriquePoint();
         a = FabriquePoint.create("Point");
@@ -23,7 +43,13 @@ public class Quadrilatere {
         c = FabriquePoint.create("Point");
         new FabriquePoint();
         d = FabriquePoint.create("Point");
+        setCouleurInterieur("rouge");
+        setCouleurTrait("noir");
     }
+
+    /**
+     * Get et set des points et des couleurs
+     */
 
     public InterPoint getA() {
         return a;
@@ -57,10 +83,36 @@ public class Quadrilatere {
         this.d = d;
     }
 
+    public String getCouleurTrait() {
+        return couleurTrait;
+    }
+
+    public void setCouleurTrait(String couleurTrait) {
+        this.couleurTrait = couleurTrait;
+    }
+
+    public String getCouleurInterieur() {
+        return couleurInterieur;
+    }
+
+    public void setCouleurInterieur(String couleurInterieur) {
+        this.couleurInterieur = couleurInterieur;
+    }
+
+    /**
+     * Méthode cote
+     * @param A
+     * @param B
+     * @return la longueur entre deux points
+     */
     protected double cote(InterPoint A, InterPoint B) {
         return Math.sqrt(Math.pow(B.getX() - A.getX(), 2) + Math.pow(B.getY() - A.getY(), 2));
     }
 
+    /**
+     * Méthode perimetre
+     * @return le périmètre d'un quadrilatère
+     */
     public double perimetre() {
         double p = 0;
         double distAB;
@@ -73,18 +125,24 @@ public class Quadrilatere {
         return p;
     }
 
-
-    public String coordonees() {
-        return "Mes sommets ont pour coordonées " + a.toString() + ", " + b.toString() + ", " + c.toString() + ", " + d.toString() + ". Son périmètre est " + perimetre() + ".";
+    /**
+     * Méthode coordonnees
+     * @return les coordonnées d'un quadrilatère
+     */
+    public String coordonnees() {
+        return "Mes sommets ont pour coordonnées " + a.toString() + ", " + b.toString() + ", " + c.toString() + ", " + d.toString() + ". Son périmètre est " + perimetre() + ".";
     }
 
-
+    /**
+     * Méthode type
+     * @return le type de quadrilatère
+     */
     public String type() {
-        return "Je suis un Quadrilatère quelconque.";
+        return "Je suis un Quadrilatère quelconque avec un trait de couleur " + getCouleurTrait() + " et l'intérieur de couleur " + getCouleurInterieur() + ".";
     }
 
     @Override
     public String toString() {
-        return type() + " " + coordonees();
+        return type() + " " + coordonnees();
     }
 }

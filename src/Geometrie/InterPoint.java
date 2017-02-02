@@ -1,12 +1,13 @@
-//Laurent Toson & Raphael Haltz
+/**
+ * Laurent Toson & Raphael Haltz
+ */
 
 package Geometrie;
 
+/**
+ * Interface InterPoint pour les classes Point et Point2
+ */
 public interface InterPoint {
-
-    /**
-     * Interface pour les classes Point et Point2
-     */
 
     public double getX();
 

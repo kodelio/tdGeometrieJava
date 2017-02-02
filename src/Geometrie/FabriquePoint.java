@@ -1,14 +1,30 @@
-//Laurent Toson & Raphael Haltz
+/**
+ * Laurent Toson & Raphael Haltz
+ */
 
 package Geometrie;
 
 import java.lang.reflect.InvocationTargetException;
 
+/**
+ * Classe FabriquePoint
+ */
 public class FabriquePoint {
+
+    /**
+     * Constructeur
+     */
     public FabriquePoint() {
         return;
     }
 
+    /**
+     * Création d'un point avec le constructeur
+     * @param x
+     * @param y
+     * @param s
+     * @return un point (Point ou Point2)
+     */
     public static InterPoint create(double x, double y, String s) {
         InterPoint p = null;
         try {
@@ -32,6 +48,11 @@ public class FabriquePoint {
         return p;
     }
 
+    /**
+     * Création d'un point avec un constructeur par défaut
+     * @param s
+     * @return un point (Point ou Point2)
+     */
     public static InterPoint create(String s) {
         InterPoint p = null;
         try {
